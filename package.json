@@ -1,0 +1,27 @@
+{
+  "name": "strongest-link",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker compose -f docker-compose.yaml -f docker-compose.dev.yaml up",
+    "test": "docker compose -f docker-compose.yaml -f docker-compose.test.yaml up -d && docker exec -it test_api sh -c \"npm i && npm test\"",
+    "stop": "docker compose down --volumes --remove-orphans",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Strongest-Link/Strongest-Link.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Strongest-Link/Strongest-Link/issues"
+  },
+  "homepage": "https://github.com/Strongest-Link/Strongest-Link#readme",
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
+  }
+}

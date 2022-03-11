@@ -1,0 +1,8 @@
+[submodule "api"]
+	path = api
+	url = git@github.com:Strongest-Link/Strongest-Link-Server.git
+	branch = staging
+[submodule "client"]
+	path = client
+	url = git@github.com:Strongest-Link/Strongest-Link-Client.git
+	branch = staging

@@ -1,4 +1,16 @@
 version: '3'
 services:
   api:
+    image: node:alpine
+    volumes:
+      - type: bind
+        source: ./api
+        target: /code
+    working_dir: /code
   db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASS}
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro

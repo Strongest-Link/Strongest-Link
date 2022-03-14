@@ -1,7 +1,23 @@
 version: '3'
 services:
   api:
+    container_name: test_api
+    environment: 
+      PGUSER: ${DATABASE_USER}
+      PGHOST: db
+      PGPASSWORD: ${DATABASE_PASS}
+      PGDATABASE: strongestlink_test
+      PGPORT: 5432
+      PORT: 5500
+    depends_on:
+      - db
+    tty: true
   db:
+    container_name: test_db
+    environment:
+      POSTGRES_DB: strongestlink_test
+    volumes:
+      - test_data:/var/lib/postgresql/data
 volumes:
   test_data:
 networks:

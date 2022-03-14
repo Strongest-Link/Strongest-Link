@@ -9,6 +9,7 @@ services:
     working_dir: /code
   db:
     image: postgres:latest
+    user: postgres
     environment:
       POSTGRES_USER: ${DATABASE_USER}
       POSTGRES_PASSWORD: ${DATABASE_PASS}

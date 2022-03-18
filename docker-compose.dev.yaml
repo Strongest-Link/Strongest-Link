@@ -8,11 +8,11 @@ services:
       PGPASSWORD: ${DATABASE_PASS}
       PGDATABASE: ${DATABASE_NAME}
       PGPORT: 5432
-      PORT: 5000
+      PORT: 8000
     depends_on:
       - db
     ports:
-      - 5000:${API_PORT}
+      - 8000:${API_PORT}
     command: sh -c "npm i && npm run dev"
   db:
     container_name: dev_db
